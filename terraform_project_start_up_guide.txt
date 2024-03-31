@@ -1,0 +1,29 @@
+1. Install Terraform using these steps:
+	a) https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
+
+2. Set up your AWS account to use terraform make sure that every thin is set up in the same region
+	a) Make sure you have cli access keys ready.
+	b) Create an s3 bucket with a folder in it to store the state file
+	c) Create a dynamodb to state table (NAMING IS IMPORTANT AND CASE SENSITIVE)
+		i) name the table 'terraform-state-lock'
+		ii) Have a partition key named 'LockID'
+		iii) leave the deafults and create the table
+	d) Set up an aws cli profile locally via the aws configure command and enter the access key details
+		aws configure --profile <profile name>
+
+3. Set up your project folder on github via the github GUI
+	a) make sure you have a .gitignore of type terraform
+	b) clone your project folder to work locally
+
+4. create a variable.tf with these variables
+	a) region
+	b) project name
+	c) envrionment
+
+5. Give your variables values in the terraform.tfvars file
+
+6. Configure your providers.tf and link it to the aws account you will be working on
+7. Configure the backend of your project
+	a) enter state file s3 bucket details
+	b) enter dynamodb state table details
+8. Initialize the terraform project with the command terraform init in the terminal
