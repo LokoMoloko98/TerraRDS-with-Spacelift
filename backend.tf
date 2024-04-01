@@ -4,7 +4,6 @@ terraform {
     bucket         = "terrards-state"
     key            = "local_test.tfstate"
     region         = "us-east-1"
-    profile        = "moloko-mokubedi"
     dynamodb_table = "terraform-state-lock"
   }
 }
