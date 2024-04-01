@@ -22,12 +22,12 @@ variable "vpc_cidr" {
 variable "public_subnet_az1_cidr" {
   description = "public subnet availabilty zone one cidr"
   type        = string
-  default = "10.0.8.0/16"
+  default = "10.0.8.0/24"
 }
 
 #public subnet availabilty zone 1 cidr variable
 variable "public_subnet_az2_cidr" {
   description = "public subnet availabilty zone two cidr"
   type        = string
-  default = "10.0.7.0/16"
+  default = "10.0.7.0/24"
 }
