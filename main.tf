@@ -2,6 +2,7 @@ module "networking" {
   source                 = "./networking"
   region                 = var.region
   public_subnet_az1_cidr = var.public_subnet_az1_cidr
+  public_subnet_az2_cidr = var.public_subnet_az2_cidr
   vpc_cidr               = var.vpc_cidr
   project_name           = var.project_name
   db_connection_port     = 5432

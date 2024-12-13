@@ -24,3 +24,10 @@ variable "public_subnet_az1_cidr" {
   description = "public subnet availabilty zone one cidr"
   type        = string
 }
+
+#public subnet availability zone 2 cidr variable
+variable "public_subnet_az2_cidr" {
+  description = "public subnet availability zone two cidr"
+  type        = string
+}
+
