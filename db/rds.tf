@@ -6,7 +6,7 @@ resource "aws_db_instance" "rds_db" {
   instance_class         = var.instance_class
   username               = var.db_username
   password               = var.db_password
-  parameter_group_name   = var.parameter_group_name
+  parameter_group_name   = aws_db_parameter_group.postgres15.name
   skip_final_snapshot    = true
   vpc_security_group_ids = [var.security_group_id]
   db_subnet_group_name   = var.db_subnet_group_name
@@ -16,3 +16,15 @@ resource "aws_db_instance" "rds_db" {
     Name = "${var.project_name}-rds-db"
   }
 }
+
+resource "aws_db_parameter_group" "postgres15" {
+  name   = "postgres15"
+  family = "postgres15"
+
+  parameter {
+    name  = "log_connections"
+    value = "1"
+  }
+}
+
+

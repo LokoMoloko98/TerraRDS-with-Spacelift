@@ -1,10 +1,10 @@
 resource "aws_security_group" "rds_sg" {
-  name        = "allow_mysql"
-  description = "Allow port 3306 inbound traffic and all outbound traffic"
+  name        = "allow_postgres"
+  description = "Allow postgres inbound traffic and all outbound traffic"
   vpc_id      = aws_vpc.vpc.id
 
   tags = {
-    Name = "allow_mysql"
+    Name = "allow_postgres"
   }
 }
 
@@ -16,7 +16,7 @@ resource "aws_vpc_security_group_ingress_rule" "allow_tls_ipv4" {
   to_port           = 443
 }
 
-resource "aws_vpc_security_group_ingress_rule" "mysql" {
+resource "aws_vpc_security_group_ingress_rule" "postgres" {
   security_group_id = aws_security_group.rds_sg.id
   cidr_ipv4         = "0.0.0.0/0"
   from_port         = var.db_connection_port
