@@ -32,10 +32,6 @@ variable "db_password" {
   type = string
 }
 
-variable "parameter_group_name" {
-  type = string
-}
-
 variable "security_group_id" {
   type = string
 }
