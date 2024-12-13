@@ -16,7 +16,7 @@ module "rds-db" {
   engine_version       = "15.2"
   instance_class       = "db.t3.micro"
   db_username          = "moloko"
-  db_password          = "therealdreamteam"
+  db_password          = var.db_password
   project_name         = var.project_name
   allocated_storage    = 30
   publicly_accessible  = true
