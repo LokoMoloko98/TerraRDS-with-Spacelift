@@ -14,7 +14,7 @@ module "rds-db" {
   db_subnet_group_name = module.networking.db_subnet_group_name
   db_name              = "mydb"
   engine               = "postgres"
-  engine_version       = "15.2"
+  engine_version       = "16"
   instance_class       = "db.t3.micro"
   db_username          = "moloko"
   db_password          = var.db_password
