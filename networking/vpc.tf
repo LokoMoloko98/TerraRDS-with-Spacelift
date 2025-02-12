@@ -63,6 +63,11 @@ resource "aws_route_table_association" "public_subnet_az1_rt_association" {
   route_table_id = aws_route_table.public_route_table.id
 }
 
+resource "aws_route_table_association" "public_subnet_az2_rt_association" {
+  subnet_id      = aws_subnet.public_subnet_az2.id
+  route_table_id = aws_route_table.public_route_table.id
+}
+
 resource "aws_db_subnet_group" "db-subnet-group" {
   name       = "db-subnet-group"
   subnet_ids = [aws_subnet.public_subnet_az1.id, aws_subnet.public_subnet_az2.id]
